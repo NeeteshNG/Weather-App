@@ -1,5 +1,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCol,
+  MDBContainer,
+  MDBIcon,
+  MDBRow,
+  MDBTypography,
+} from "mdb-react-ui-kit";
 
 const apiKey = "3ee93d1a25d6522bc6ea1f5cd2f93fbd";
 
@@ -28,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      
+
     </div>
   );
 }
