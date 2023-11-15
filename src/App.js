@@ -38,6 +38,33 @@ function App() {
 
   return (
     <div className="App">
+      <section className="vh-100" style={{ backgroundColor: "#f5f6f7" }}>
+      <MDBContainer className="h-100">
+        <MDBRow className="justify-content-center align-items-center h-100">
+          <MDBCol md="10" lg="8" xl="6">
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter location..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <button className="btn btn-primary mt-2" onClick={handleSearch}>
+                Search
+              </button>
+            </div>
+            {weatherData && (
+              <MDBCard
+                className="bg-dark text-white"
+                style={{ borderRadius: "40px" }}
+              >
+              </MDBCard>
+            )}
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </section>
 
     </div>
   );
