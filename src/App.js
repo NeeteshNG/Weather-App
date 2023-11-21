@@ -4,19 +4,22 @@ import "./App.css";
 const apiKey = "3ee93d1a25d6522bc6ea1f5cd2f93fbd";
 
 function setBackgroundBasedOnTemperature(temperature) {
-  const body = document.querySelector('body');
+  const body = document.querySelector("body");
 
   if (temperature < 15) {
-    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/all-snowy-winter-2vesr1hg6k4wkyv2.webp")';
+    body.style.backgroundImage =
+      'url("https://wallpapers.com/images/hd/all-snowy-winter-2vesr1hg6k4wkyv2.webp")';
   } else if (temperature >= 15 && temperature < 25) {
-    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/spring-landscape-painting-8xzgaulaerpgcjvw.webp")';
+    body.style.backgroundImage =
+      'url("https://wallpapers.com/images/hd/spring-landscape-painting-8xzgaulaerpgcjvw.webp")';
   } else if (temperature >= 25 && temperature < 45) {
-    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/summer-afternoon-v82rqp4ri9exvon4.webp")';
+    body.style.backgroundImage =
+      'url("https://wallpapers.com/images/hd/summer-afternoon-v82rqp4ri9exvon4.webp")';
   } else {
-    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/autumn-country-road-sunset-kquin5jg1dtbyxgc.webp")';
+    body.style.backgroundImage =
+      'url("https://wallpapers.com/images/hd/autumn-country-road-sunset-kquin5jg1dtbyxgc.webp")';
   }
 }
-
 
 function App() {
   const [location, setLocation] = useState("Delhi, India");
@@ -52,61 +55,67 @@ function App() {
     <div className="App">
       <section className="section-container">
         <div className="body-container">
-              <div className="search-box">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter location..."
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-                <button className="search-button" onClick={handleSearch}>
-                  Search
-                </button>
+          <div className="search-box">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter location..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <button className="search-button" onClick={handleSearch}>
+              Search
+            </button>
+          </div>
+          {weatherData && (
+            <div className="icon-image">
+              <div className="bg-image">
+                {/* Display weather image or icon */}
+                {weatherData.weather && weatherData.weather.length > 0 && (
+                  <img
+                    src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+                    className="card-img"
+                    alt="weather"
+                  />
+                )}
+                <div className="mask"></div>
               </div>
-              {weatherData && (
-                <div
-                  className="icon-image"
-                >
-                  <div className="bg-image">
-                    {/* Display weather image or icon */}
-                    {weatherData.weather && weatherData.weather.length > 0 && (
-                      <img
-                        src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-                        className="card-img"
-                        alt="weather"
-                      />
-                    )}
-                    <div
-                      className="mask"
-                    ></div>
-                  </div>
-                  <div className="weather-card">
-                    <p className="location-name">
-                      {weatherData.name},{" "}
-                      {weatherData.sys && weatherData.sys.country}
-                    </p>
-                    <p className="temperature">
-                      {weatherData.main && weatherData.main.temp}&deg;C
-                    </p>
-                    <p className="feels-like">
-                      Feels Like:{" "}
-                      <strong>
-                        {weatherData.main && weatherData.main.feels_like}&deg;C
-                      </strong>
-                    </p>
-                    {weatherData.weather && weatherData.weather.length > 0 && (
-                      <p className="weather-type">
-                        {weatherData.weather[0].main}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
+              <div className="weather-card">
+                <p className="location-name">
+                  {weatherData.name},{" "}
+                  {weatherData.sys && weatherData.sys.country}
+                </p>
+                <p className="temperature">
+                  {weatherData.main && weatherData.main.temp}&deg;C
+                </p>
+                <p className="feels-like">
+                  Feels Like:{" "}
+                  <strong>
+                    {weatherData.main && weatherData.main.feels_like}&deg;C
+                  </strong>
+                </p>
+                {weatherData.weather && weatherData.weather.length > 0 && (
+                  <p className="weather-type">{weatherData.weather[0].main}</p>
+                )}
+              </div>
+            </div>
+          )}
+          <div className="ul_git">
+            <div className="il_git">
+              <a
+                href="https://github.com/NeeteshNG/MyTaskBestPeers_5"
+                rel="noreferrer"
+                target="_blank"
+                title="Git Repo"
+                className="git-click"
+              >
+                <i className="fab fa-github size_git"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
-
   );
 }
 
