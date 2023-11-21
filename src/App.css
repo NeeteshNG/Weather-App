@@ -76,7 +76,6 @@ body {
 .card-img {
   margin-top: 10px;
   background-color: white;
-  background-image: url('./File/symbol.gif');
   background-position: bottom;
   border-radius: 50%;
   width: 100px;

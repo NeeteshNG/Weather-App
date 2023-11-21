@@ -103,7 +103,7 @@ function App() {
           <div className="ul_git">
             <div className="il_git">
               <a
-                href="https://github.com/NeeteshNG/MyTaskBestPeers_5"
+                href="https://github.com/NeeteshNG/Weather-App"
                 rel="noreferrer"
                 target="_blank"
                 title="Git Repo"
