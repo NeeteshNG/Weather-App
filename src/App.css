@@ -2,37 +2,102 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section-container {
+  background-color: rgba(255, 255, 255, 0.096);
+  /* Background color with opacity */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.body-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search-box {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-control {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(68,94,115);
+  color: #fff;
+  cursor: pointer;
+}
+
+.icon-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 10px;
+  color: black;
+  background-size: cover;
+  background-color: rgba(173, 196, 213, 0.397);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.bg-image {
+  border-radius: 35px;
+  overflow: hidden;
+}
+
+.card-img {
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.weather-card {
+  text-align: center;
+  /* margin-top: 10px; */
+}
+
+.location-name {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.temperature {
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+.feels-like {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.weather-type {
+  font-size: 1.2em;
 }

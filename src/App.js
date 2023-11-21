@@ -3,10 +3,29 @@ import "./App.css";
 
 const apiKey = "3ee93d1a25d6522bc6ea1f5cd2f93fbd";
 
+function setBackgroundBasedOnTemperature(temperature) {
+  const body = document.querySelector('body');
+
+  if (temperature < 15) {
+    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/all-snowy-winter-2vesr1hg6k4wkyv2.webp")';
+  } else if (temperature >= 15 && temperature < 25) {
+    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/spring-landscape-painting-8xzgaulaerpgcjvw.webp")';
+  } else if (temperature >= 25 && temperature < 45) {
+    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/summer-afternoon-v82rqp4ri9exvon4.webp")';
+  } else {
+    body.style.backgroundImage = 'url("https://wallpapers.com/images/hd/autumn-country-road-sunset-kquin5jg1dtbyxgc.webp")';
+  }
+}
+
+
 function App() {
   const [location, setLocation] = useState("Juneau, Alaska, US");
   const [weatherData, setWeatherData] = useState(null);
   const [search, setSearch] = useState("");
+
+  const handleSearch = () => {
+    setLocation(search);
+  };
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -17,16 +36,17 @@ function App() {
 
         const data = await response.json();
         setWeatherData(data);
+
+        if (data && data.main && data.main.temp) {
+          setBackgroundBasedOnTemperature(data.main.temp);
+        }
       } catch (error) {
         console.error("Error while fetching Data : ", error);
       }
     };
+
     fetchWeatherData();
   }, [location]);
-
-  const handleSearch = () => {
-    setLocation(search);
-  };
 
   return (
     <div className="App">
@@ -47,9 +67,8 @@ function App() {
               {weatherData && (
                 <div
                   className="icon-image"
-                  style={{ borderRadius: "40px" }}
                 >
-                  <div className="bg-image" style={{ borderRadius: "35px" }}>
+                  <div className="bg-image">
                     {/* Display weather image or icon */}
                     {weatherData.weather && weatherData.weather.length > 0 && (
                       <img
@@ -87,6 +106,7 @@ function App() {
         </div>
       </section>
     </div>
+
   );
 }
 
