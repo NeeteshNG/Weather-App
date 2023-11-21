@@ -59,9 +59,12 @@ body {
   padding-left: 60px;
   padding-right: 60px;
   border-radius: 10px;
-  color: black;
+  background-image: url('./File/unnamed.gif');
+  background-position-x: left;
+  color: white;
+  text-shadow: 0 0 3px rgb(60, 2, 194), 0 0 5px #000000;
   background-size: cover;
-  background-color: rgba(173, 196, 213, 0.397);
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -73,6 +76,8 @@ body {
 .card-img {
   margin-top: 10px;
   background-color: white;
+  background-image: url('./File/symbol.gif');
+  background-position: bottom;
   border-radius: 50%;
   width: 100px;
   height: 100px;

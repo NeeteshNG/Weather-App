@@ -19,7 +19,7 @@ function setBackgroundBasedOnTemperature(temperature) {
 
 
 function App() {
-  const [location, setLocation] = useState("Juneau, Alaska, US");
+  const [location, setLocation] = useState("Delhi, India");
   const [weatherData, setWeatherData] = useState(null);
   const [search, setSearch] = useState("");
 
