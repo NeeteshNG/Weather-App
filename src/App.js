@@ -89,7 +89,7 @@ function App() {
                   {weatherData.main && weatherData.main.temp}&deg;C
                 </p>
                 <p className="feels-like">
-                  Feels Like:{" "}
+                  Feeling Like:{" "}
                   <strong>
                     {weatherData.main && weatherData.main.feels_like}&deg;C
                   </strong>
